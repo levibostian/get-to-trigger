@@ -1,0 +1,27 @@
+name: Deploy action 
+on:
+  push:
+    branches:
+      - main
+      - beta
+      - alpha
+
+jobs:
+  deploy:
+    name: Deploy git tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy via semantic release 
+        uses: cycjimmy/semantic-release-action@v2
+        with: 
+          # version numbers below can be in many forms: M, M.m, M.m.p
+          semantic_version: 18
+          extra_plugins: |
+            @semantic-release/commit-analyzer@9
+            @semantic-release/release-notes-generator@10
+            @semantic-release/changelog@6
+            @semantic-release/git@10
+            @semantic-release/github@8
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_PUSH_TOKEN }}

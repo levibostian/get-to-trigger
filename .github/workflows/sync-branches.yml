@@ -1,0 +1,11 @@
+name: on push
+
+on: [push]
+
+jobs:
+  sync-branches:
+    name: Sync branches 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "I should run after a deployment to beta"

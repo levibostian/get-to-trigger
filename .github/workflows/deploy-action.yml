@@ -11,7 +11,11 @@ jobs:
     name: Deploy git tag
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false # <--- this
       - name: Deploy via semantic release 
         uses: cycjimmy/semantic-release-action@v2
         with: 

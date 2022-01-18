@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/levibostian/get-to-trigger/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-01-18)
+
+
+### Features
+
+* make feeature c ([5932ca0](https://github.com/levibostian/get-to-trigger/commit/5932ca00f37f0f2f8bc2d25145fd448306f90a9e))
+
 # 1.0.0-beta.1 (2022-01-18)
 
 
